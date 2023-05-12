@@ -17,7 +17,7 @@ namespace tm.Projectiles.Melee
             Projectile.alpha = 40;
             Projectile.tileCollide = false;
             Projectile.extraUpdates = 2;
-            Projectile.timeLeft = 1;
+            Projectile.timeLeft = 2;
             Projectile.scale = 1f;
          Projectile.localNPCHitCooldown = 10;
         }

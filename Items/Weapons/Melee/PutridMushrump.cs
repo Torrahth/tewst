@@ -34,6 +34,10 @@ namespace tm.Items.Weapons.Melee
             Item.shoot = ModContent.ProjectileType<PutridMushrumpP>();
             Item.noUseGraphic = true;
         }
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
+            position = player.MountedCenter;
+        }
         public override void HoldItem(Player player)
         {
             player.jumpSpeedBoost *= 0.4f;
