@@ -52,7 +52,7 @@ namespace tm.Projectiles.Melee
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), target.Center + new Vector2(Main.rand.NextFloat(-0.1f, 0.1f), Main.rand.NextFloat(-0.1f, 0.1f)), Vector2.Zero, ModContent.ProjectileType<BloodSplatter>(), 0, 0, Projectile.owner);
             if (player.statLife >= player.statLifeMax2 / 2)
             {
-                player.AddBuff(ModContent.BuffType<Buffs.WeaponSpeedBuff>(), 360);
+                player.AddBuff(ModContent.BuffType<Buffs.WeaponSpeedBuff>(), 660);
             }
         }
         public override void OnHitPvp(Player target, int damage, bool crit)
