@@ -4,43 +4,59 @@ using Terraria.ModLoader;
 using Terraria.WorldBuilding;
 using tm.Items.Equips;
 using Terraria.ID;
+using Terraria.IO;
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria.GameContent;
+using Terraria.DataStructures;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria.GameContent.Generation;
+using Terraria.Localization;
+using Terraria.Utilities;
 
 namespace tm
 {
+
     public class tmworldgen : ModSystem
     {
-        public override void PostWorldGen()
+        public class TmWorld : ModSystem
         {
-            for (int c = 0; c < 8000; c++)
+            public override void PostWorldGen()
             {
-                Chest chest = Main.chest[c];
-                if (chest == null)
+                for (int c = 0; c < 8000; c++)
                 {
-                    continue;
-                }
-                Tile tile = Framing.GetTileSafely(chest.x, chest.y);
-                if (tile.TileType != 21)
-                {
-                    continue;
-                }
-                switch (tile.TileFrameX)
-                {
-                    case 540:
-                        {
-                            if (!Utils.NextBool(WorldGen.genRand, 3))
+                    Chest chest = Main.chest[c];
+                    if (chest == null)
+                    {
+                        continue;
+                    }
+                    Tile tile = Framing.GetTileSafely(chest.x, chest.y);
+                    if (tile.TileType != 21)
+                    {
+                        continue;
+                    }
+                    switch (tile.TileFrameX)
+                    {
+                        case 540:
                             {
-                                break;
-                            }
-                            for (int k = 0; k < 40; k++)
-                            {
-                                if (chest.item[k].type == ItemID.WebSlinger)
+                                if (!Utils.NextBool(WorldGen.genRand, 3))
                                 {
-                                    chest.item[k].SetDefaults(ModContent.ItemType<Obometer>());
                                     break;
                                 }
+                                for (int k = 0; k < 40; k++)
+                                {
+                                    if (chest.item[k].type == ItemID.WebSlinger)
+                                    {
+                                        chest.item[k].SetDefaults(ModContent.ItemType<Obometer>());
+                                        break;
+                                    }
+                                }
+                                break;
                             }
-                            break;
-                        }
+                    }
                 }
             }
         }

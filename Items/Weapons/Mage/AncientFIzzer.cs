@@ -7,11 +7,11 @@ using Terraria.GameContent.Creative;
 
 namespace tm.Items.Weapons.Mage
 {
-    public class AncientFIzzer : ModItem
+    public class AncientFizzer : ModItem
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Swing to Blow Dangerious Bubbles to harm your Foe");
+            // Tooltip.SetDefault("Swing to Blow Dangerious Bubbles to harm your Foe");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
@@ -31,6 +31,7 @@ namespace tm.Items.Weapons.Mage
             Item.autoReuse = true;
             Item.shoot = ProjectileID.Bubble;
             Item.shootSpeed = 12;
+            Item.mana = 4;
 
             Item.rare = ItemRarityID.Blue;
         }

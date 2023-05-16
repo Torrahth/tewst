@@ -9,7 +9,7 @@ namespace tm.Items.Equips
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Increases Attackspeed at the cost of your Life!");
+            // Tooltip.SetDefault("Increases Attackspeed at the cost of your Life!");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()

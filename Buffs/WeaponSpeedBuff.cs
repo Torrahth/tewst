@@ -8,8 +8,8 @@ namespace tm.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Melee Speed");
-            Description.SetDefault("6% Melee Speed Bonus.");
+            // DisplayName.SetDefault("Melee Speed");
+            // Description.SetDefault("6% Melee Speed Bonus.");
             Main.buffNoTimeDisplay[Type] = false;
             Main.debuff[Type] = false;
         }

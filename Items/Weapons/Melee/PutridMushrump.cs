@@ -12,7 +12,7 @@ namespace tm.Items.Weapons.Melee
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Plant growing roots into your foe");
+            // Tooltip.SetDefault("Plant growing roots into your foe");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()

@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.WorldBuilding;
 using Terraria.ModLoader.Utilities;
 using tm.Projectiles.Enemy;
+using Terraria.GameContent.ItemDropRules;
+using tm.Items.Misc;
 
 namespace tm.Npcs.BossEnemy
 {
@@ -198,6 +200,11 @@ namespace tm.Npcs.BossEnemy
                         Dash();
                     }
                     break;
+                case 4:
+                    {
+                        NPC.ai[0] = 0; 
+                    }
+                    break;
 
             }
         }
@@ -262,6 +269,19 @@ namespace tm.Npcs.BossEnemy
             }
 
 
+        }
+        public override void OnKill()
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                Dust d = Dust.NewDustPerfect(NPC.Center, DustID.Smoke, Main.rand.NextVector2Circular(2, 2) * 3, 0, default, 1);
+                Dust.NewDustPerfect(NPC.Center, DustID.Torch, Main.rand.NextVector2Circular(1, 1) * 2, 0, default, 2);
+                d.noGravity = true;
+            }
+        }
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ActiveCoil>(), 1, 2, 4));
         }
     }
 }
