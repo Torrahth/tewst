@@ -13,7 +13,7 @@ namespace tm.Items.Misc
         {
             Item.width = 16;
             Item.height = 18;
-            Item.stack = 999;
+            Item.maxStack = 999;
             Item.buyPrice(0, 0, 10);
             Item.material = true;
         }

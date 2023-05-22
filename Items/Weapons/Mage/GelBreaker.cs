@@ -36,7 +36,7 @@ namespace tm.Items.Weapons.Mage
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<JellyStar>();
             Item.shootSpeed = 1;
-            Item.mana = 4;
+            Item.mana = 6;
 
             Item.rare = ItemRarityID.LightRed;
         }

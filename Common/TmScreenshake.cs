@@ -21,7 +21,7 @@ namespace tm.Common
         {
             if (screenShakeStrength > 0.001f)
             {
-                Main.screenPosition += (new Vector2(Main.rand.NextFloat(-screenShakeStrength, screenShakeStrength), Main.rand.NextFloat(-screenShakeStrength, screenShakeStrength)) * 0.5f);
+                Main.screenPosition += (new Vector2(Main.rand.NextFloat(-screenShakeStrength, screenShakeStrength), Main.rand.NextFloat(-screenShakeStrength, screenShakeStrength)) * 1.5f);
                 screenShakeStrength *= screenShakeDissolve;
             }
         }
