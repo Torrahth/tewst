@@ -15,13 +15,13 @@ namespace tm.Items.Weapons.Melee
         }
         public override void SetDefaults()
         {
-            Item.width = 42;
-            Item.height = 42;
-            Item.useTime = 21;
-            Item.knockBack = 1;
-            Item.useAnimation = 21;
+            Item.width = 86;
+            Item.height = 92;
+            Item.useTime = 11;
+            Item.useAnimation = 11;
+            Item.knockBack = 3;
             Item.DamageType = DamageClass.Melee;
-            Item.damage = 23;
+            Item.damage = 43;
             Item.crit = 2;
             Item.useStyle = 1;
             Item.value = Item.sellPrice(0, 0, 40);

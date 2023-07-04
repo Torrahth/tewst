@@ -47,11 +47,6 @@ namespace tm.Tiles
                     NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, n);
                 }
             }
-           
-                  
-           
-
-
             return true;
         }
 
