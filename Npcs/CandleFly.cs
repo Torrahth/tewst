@@ -19,8 +19,8 @@ namespace tm.Npcs
         }
         public override void SetDefaults()
         {
-            NPC.width = 34;
-            NPC.height = 30;
+            NPC.width = 26;
+            NPC.height = 26;
           //  NPC.scale = Main.rand.NextFloat(0.7f, 1.9f);
             NPC.lifeMax = 25;
             NPC.damage = 10;

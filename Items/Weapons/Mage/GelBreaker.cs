@@ -63,7 +63,7 @@ namespace tm.Items.Weapons.Mage
             .AddTile(TileID.Anvils)
             .Register();
             CreateRecipe()
-              .AddIngredient(ItemID.AntlionMandible)
+              .AddIngredient(ItemID.Gel, 10)
                 .AddIngredient(ItemID.FallenStar)
               .AddIngredient(ItemID.CrimtaneBar, 6)
                   .AddIngredient(ItemID.TissueSample, 12)

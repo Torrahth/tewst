@@ -9,7 +9,7 @@ namespace tm.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("gets rid of THOSE GOD DAMN FUCKING WORMS FOR GOOD HOLY FUCKING SHIT-");
+            Tooltip.SetDefault("worms violently explode and you dont have to deal with them");
         }
 
         public override void SetDefaults()

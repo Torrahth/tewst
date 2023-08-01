@@ -10,7 +10,7 @@ namespace tm.Items.Weapons.Melee
     {
         public override void SetStaticDefaults()
         {
-            // Tooltip.SetDefault("Right click to spawn a Yarn of Roots");
+             Tooltip.SetDefault("Right click to spawn a Yarn of Roots");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
