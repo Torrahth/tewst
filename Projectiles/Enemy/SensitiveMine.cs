@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace tm.Projectiles.Enemy
+namespace tmt.Projectiles.Enemy
 {
     public class SensitiveMine : ModProjectile
     {
@@ -55,7 +55,7 @@ namespace tm.Projectiles.Enemy
     }
     public class explosive : ModProjectile
     {
-        public override string Texture => "tm/Common/Textures/Empty"; 
+        public override string Texture => "tmt/Common/Textures/Empty"; 
         public override void SetDefaults()
         {
             Projectile.width = 100;

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
 
-namespace tm.Projectiles
+namespace tmt.Projectiles
 {
     public class FizzerBubble : ModProjectile
     {

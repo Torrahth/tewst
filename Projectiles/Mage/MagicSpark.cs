@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 using System;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using tm.Common;
+using tmt.Common;
 
 /* // my code and not anyone elses, thanks! btw do not steal it or your dumb
 using tin;
@@ -19,7 +19,7 @@ namespace bendocom.tinban
 }
 */
 
-namespace tm.Projectiles.Mage
+namespace tmt.Projectiles.Mage
 {
     public class MagicSpark : ModProjectile
     {
@@ -46,7 +46,7 @@ namespace tm.Projectiles.Mage
             Projectile.penetrate = 3;
             Projectile.extraUpdates = 3;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player player = Main.player[Projectile.owner];
             if (Main.rand.NextBool(7))
@@ -61,17 +61,20 @@ namespace tm.Projectiles.Mage
       
             target.AddBuff(BuffID.Cursed, 2000);
         }
-        public override void OnHitPvp(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            Player player = Main.player[Projectile.owner];
-            if (Main.rand.NextBool(7))
+            if (info.PvP == true)
             {
-                player.lifeSteal += 1;
+                Player player = Main.player[Projectile.owner];
+                if (Main.rand.NextBool(7))
+                {
+                    player.lifeSteal += 1;
+                }
+                Terraria.Audio.SoundEngine.PlaySound(SoundID.NPCHit30, Projectile.Center);
+                Main.LocalPlayer.GetModPlayer<TmScreenshake>().ShakeScreen(0.3f, 0.8f);
+                target.velocity /= 2f;
+                target.AddBuff(BuffID.Cursed, 2000);
             }
-            Terraria.Audio.SoundEngine.PlaySound(SoundID.NPCHit30, Projectile.Center);
-            Main.LocalPlayer.GetModPlayer<TmScreenshake>().ShakeScreen(0.3f, 0.8f);
-            target.velocity /= 2f;
-            target.AddBuff(BuffID.Cursed, 2000);
         }
         public override void AI()
         {

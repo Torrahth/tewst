@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.WorldBuilding;
 using Terraria.ModLoader.Utilities;
 
-namespace tm.Npcs
+namespace tmt.Npcs
 {
     public class CandleFly : ModNPC
     {
@@ -58,7 +58,7 @@ namespace tm.Npcs
             Main.spriteBatch.End();
             Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Additive, null, null, null, null, Main.GameViewMatrix.ZoomMatrix);
 
-            Texture2D texture2 = ModContent.Request<Texture2D>("tm/Common/Textures/FireflyLight").Value;
+            Texture2D texture2 = ModContent.Request<Texture2D>("tmt/Common/Textures/FireflyLight").Value;
             Vector2 drawOrigin = texture2.Size() / 2f;
             Color color = new Color(255, 205, 56, 200) * (1f - (float)NPC.alpha / 255f) * ((NPC.oldPos.Length) / (float)NPC.oldPos.Length);
 

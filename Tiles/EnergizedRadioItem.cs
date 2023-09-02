@@ -3,13 +3,13 @@ using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 
-namespace tm.Tiles
+namespace tmt.Tiles
 {
     public class EnergizedRadioItem : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Energized Radio");
+            // DisplayName.SetDefault("Energized Radio");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -32,7 +32,6 @@ namespace tm.Tiles
     .AddIngredient(ItemID.DartTrap)
 .AddTile(TileID.Anvils)
 .Register();
-
         }
     }
 }

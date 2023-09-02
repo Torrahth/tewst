@@ -5,15 +5,15 @@ using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework.Input;
-using tm.Projectiles.Mage;
+using tmt.Projectiles.Mage;
 
-namespace tm.Items.Weapons.Mage
+namespace tmt.Items.Weapons.Mage
 {
     public class DantesInferno : ModItem
     {
         public override void SetStaticDefaults()
         {
-             Tooltip.SetDefault("Summons the spawn of hell to clap your foe\nThere were only 9 Triangles of hell");
+             // Tooltip.SetDefault("Summons the spawn of hell to clap your foe\nThere were only 9 Triangles of hell");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()

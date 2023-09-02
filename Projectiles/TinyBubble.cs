@@ -2,7 +2,7 @@
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace tm.Projectiles
+namespace tmt.Projectiles
 {
     public class TinyBubble : ModProjectile
     {

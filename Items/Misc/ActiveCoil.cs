@@ -1,14 +1,10 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 
-namespace tm.Items.Misc
+namespace tmt.Items.Misc
 {
     public class ActiveCoil : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            Tooltip.SetDefault("Despite what you think it is, it provides little to no Energy");
-        }
         public override void SetDefaults()
         {
             Item.width = 16;

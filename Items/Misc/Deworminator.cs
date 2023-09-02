@@ -2,14 +2,14 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace tm.Items.Misc
+namespace tmt.Items.Misc
 {
     public class Deworminator : ModItem
 
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("worms violently explode and you dont have to deal with them");
+            // Tooltip.SetDefault("worms violently explode and you dont have to deal with them");
         }
 
         public override void SetDefaults()
@@ -40,11 +40,13 @@ namespace tm.Items.Misc
         {
             CreateRecipe()
                 .AddIngredient(ItemID.IronBar, 7)
+                    .AddIngredient(ItemID.WhoopieCushion)
                   .AddIngredient(ItemID.Worm)
                 .AddTile(TileID.Anvils)
                 .Register();
             CreateRecipe()
     .AddIngredient(ItemID.LeadBar, 7)
+        .AddIngredient(ItemID.WhoopieCushion)
       .AddIngredient(ItemID.Worm)
     .AddTile(TileID.Anvils)
     .Register();

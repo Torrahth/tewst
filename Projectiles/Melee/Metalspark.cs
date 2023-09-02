@@ -9,7 +9,7 @@ using Terraria.GameContent;
 using ReLogic.Content;
 using System.Collections.Generic;
 
-namespace tm.Projectiles.Melee
+namespace tmt.Projectiles.Melee
 {
     public class Metalspark : ModProjectile
     {

@@ -4,18 +4,18 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Terraria.GameContent.Creative;
 using Terraria.Audio;
-using tm.Projectiles.Ranged;
+using tmt.Projectiles.Ranged;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 
-namespace tm.Items.Weapons.Ranged
+namespace tmt.Items.Weapons.Ranged
 {
     public class ObliqueDownpour : ModItem
     {
         float a = -6 ;
         public override void SetStaticDefaults()
         {
-             Tooltip.SetDefault("When crystals reach the point of the mouse when spawned they may explode into many groups, However bring the mouse farther or being a enemy it will not split");
+             // Tooltip.SetDefault("When crystals reach the point of the mouse when spawned they may explode into many groups, However bring the mouse farther or being a enemy it will not split");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
@@ -34,13 +34,13 @@ namespace tm.Items.Weapons.Ranged
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<StrangeCrystak>();
             Item.shootSpeed = 12;
-            Item.ammo = AmmoID.Arrow;
+            Item.useAmmo = AmmoID.Arrow;
 
             Item.rare = ItemRarityID.LightRed;
         }
         public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
         {
-            Texture2D texture = ModContent.Request<Texture2D>("tm/Common/Textures/ObliqueDownpourGlowmask", AssetRequestMode.ImmediateLoad).Value;
+            Texture2D texture = ModContent.Request<Texture2D>("tmt/Common/Textures/ObliqueDownpourGlowmask", AssetRequestMode.ImmediateLoad).Value;
             spriteBatch.Draw
             (
                 texture,
@@ -70,6 +70,10 @@ namespace tm.Items.Weapons.Ranged
             if (a >= 6)
             {
                 a = -6;
+            }
+            if (type == ProjectileID.WoodenArrowFriendly)
+            {
+                type = ModContent.ProjectileType<StrangeCrystak>();
             }
         }
         public override void AddRecipes()

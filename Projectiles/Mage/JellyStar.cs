@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 
-namespace tm.Projectiles.Mage
+namespace tmt.Projectiles.Mage
 {
     public class JellyStar : ModProjectile
     {

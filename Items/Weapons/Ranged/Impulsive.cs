@@ -5,13 +5,13 @@ using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 
-namespace tm.Items.Weapons.Ranged
+namespace tmt.Items.Weapons.Ranged
 {
     public class Impulsive : ModItem
     {
         public override void SetStaticDefaults()
         {
-             Tooltip.SetDefault("Fires two skulls that ram into your enemies");
+             // Tooltip.SetDefault("Fires two skulls that ram into your enemies");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
@@ -50,15 +50,14 @@ namespace tm.Items.Weapons.Ranged
                 .AddIngredient(ItemID.Harpoon)
                 .AddIngredient(ItemID.SoulofNight, 6)
                      .AddIngredient(ItemID.EbonstoneBlock, 30)
-                .AddTile(TileID.WorkBenches)
+                .AddTile(TileID.MythrilAnvil)
                 .Register();
             CreateRecipe()
               .AddIngredient(ItemID.Harpoon)
               .AddIngredient(ItemID.SoulofNight, 6)
-                   .AddIngredient(ItemID.EbonstoneBlock, 30)
-              .AddTile(TileID.WorkBenches)
+                   .AddIngredient(ItemID.CrimstoneBlock, 30)
+              .AddTile(TileID.MythrilAnvil)
               .Register();
-
         }
     }
 }

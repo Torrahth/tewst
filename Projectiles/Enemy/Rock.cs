@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace tm.Projectiles.Enemy
+namespace tmt.Projectiles.Enemy
 {
     public class Rock : ModProjectile
     {

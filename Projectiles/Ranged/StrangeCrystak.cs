@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using Terraria.Audio;
 
-namespace tm.Projectiles.Ranged
+namespace tmt.Projectiles.Ranged
 {
     public class CrystakArrow : ModProjectile
     {

@@ -1,11 +1,11 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 
-namespace tm.Projectiles.Melee
+namespace tmt.Projectiles.Melee
 {
     public class Hitbox : ModProjectile
     {
-        public override string Texture => "tm/Common/Textures/Empty";
+        public override string Texture => "tmt/Common/Textures/Empty";
 
         public override void SetDefaults()
         {

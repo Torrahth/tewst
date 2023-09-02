@@ -6,9 +6,9 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using Terraria.Audio;
-using tm.Common;
+using tmt.Common;
 
-namespace tm.Projectiles.Mage
+namespace tmt.Projectiles.Mage
 {
     public class GloryHand : ModProjectile
     {
@@ -36,7 +36,7 @@ namespace tm.Projectiles.Mage
             for (int ia = 0; ia < Main.maxProjectiles; ia++)
             {
                 if (ia == Projectile.whoAmI)
-                    continue;  // Ignore "this projectile"
+                    continue;  
 
                 Projectile otherProj = Main.projectile[ia];
                 if (otherProj.active && otherProj.friendly )
@@ -69,7 +69,7 @@ namespace tm.Projectiles.Mage
     }
     public class HITBOX : ModProjectile
     {
-        public override string Texture => "tm/Common/Textures/Empty";
+        public override string Texture => "tmt/Common/Textures/Empty";
         public override void SetDefaults()
         {
             Projectile.width = 200;

@@ -7,29 +7,28 @@ using Terraria.GameContent.Creative;
 using System;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using Mono.Cecil;
-using static Terraria.ModLoader.PlayerDrawLayer;
+using tmt.Projectiles.Ranged;
+using Terraria.Audio;
+using tmt.Common;
 
-namespace tm.Items.Weapons.Ranged
+namespace tmt.Items.Weapons.Ranged
 {
     public class Preeminent : ModItem
     {
         public override void SetStaticDefaults()
         {
-            // Tooltip.SetDefault("Plant growing roots into your foe");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
         {
             Item.width = 58;
             Item.height = 30;
-            Item.useTime = 10;
             Item.knockBack = 1;
-            Item.useAnimation = 30;
-            Item.reuseDelay = 22;
+            Item.useTime = 1;
+            Item.useAnimation = 1;
 
             Item.DamageType = DamageClass.Ranged;
-            Item.damage = 36;
+            Item.damage = 46;
             Item.crit = 4;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = Item.sellPrice(0, 1, 40);
@@ -50,10 +49,25 @@ namespace tm.Items.Weapons.Ranged
        //     Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI, ai1: type);
             return false;
         }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.QuadBarrelShotgun)
+                .AddIngredient(ItemID.CobaltBar, 15)
+                     .AddIngredient(ItemID.EyeoftheGolem)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+            CreateRecipe()
+       .AddIngredient(ItemID.QuadBarrelShotgun)
+       .AddIngredient(ItemID.PalladiumBar, 15)
+            .AddIngredient(ItemID.EyeoftheGolem)
+       .AddTile(TileID.MythrilAnvil)
+       .Register();
+        }
     }
     public class preeminetheld : ModProjectile
     {
-        public override string Texture => "tm/Items/Weapons/Ranged/Preeminent";
+        public override string Texture => "tmt/Items/Weapons/Ranged/Preeminent";
         public override void SetDefaults()
         {
             Projectile.width = 54;
@@ -64,7 +78,10 @@ namespace tm.Items.Weapons.Ranged
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
             Projectile.aiStyle = -1;
+            DrawOriginOffsetX = 2;
         }
+
+        int timeshot = 0;
 
         float plusRoto = 45f;
 
@@ -76,16 +93,19 @@ namespace tm.Items.Weapons.Ranged
 
         int overheatmeter;
 
-        int shoottimer = 40;
+        float shoottimer = 9;
 
+        int effecttimer = 0;
         public override void AI()
         {
           
             Player player = Main.player[Projectile.owner];
             var mouse = player.Center.DirectionTo(Main.MouseWorld);
 
+            var r = mouse.ToRotation() + 0.785398f + Projectile.ai[0]; ;
+
             player.heldProj = Projectile.whoAmI;
-            var Rotation = Projectile.rotation = Projectile.AngleTo(Main.MouseWorld);
+            var Rotation = r = Projectile.AngleTo(Main.MouseWorld);
             if (Main.mouseLeft == false)
             {
                 Projectile.Kill();
@@ -104,27 +124,87 @@ namespace tm.Items.Weapons.Ranged
                 player.ChangeDir(-1);
                 spritedirectionvertical = SpriteEffects.FlipVertically;
             }
-            Projectile.rotation = mouse.ToRotation() + 0.785398f + Projectile.ai[0];
-            Projectile.Center = player.Center + ((Distance * Projectile.scale) * (Projectile.rotation - 0.785398f).ToRotationVector2());
-            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, Projectile.rotation - 2.35619f);
+             r =  mouse.ToRotation() + 0.785398f + Projectile.ai[0];
+            Projectile.Center = player.Center + ((Distance * Projectile.scale) * (r - 0.785398f).ToRotationVector2());
+            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, r - 2.35619f);
 
+            float water = player.GetAttackSpeed(DamageClass.Ranged);
             // actual shooting
-            if (++shoottimer >= 40)
+            if (++shoottimer >= 10 - water)
             {
-                for (int i = 0; i < 5; i++)
+                if (shoottimer == 10 - water) // im so good at coding
                 {
-                    var newvelocity = new Vector2(0, 12).RotatedBy(mouse.ToRotation() - Math.PI / 2);//.RotatedByRandom(MathHelper.ToRadians(22));
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, newvelocity.RotatedByRandom(MathHelper.ToRadians(22)), (int)Projectile.ai[1], Projectile.damage, 2, player.whoAmI);
+                    timeshot++;
+                    Main.LocalPlayer.GetModPlayer<TmScreenshake>().ShakeScreen(0.1f, 0.4f);
+                    SoundEngine.PlaySound(SoundID.DD2_BetsyFireballShot, Projectile.Center);
+                    Shoot(player, mouse);
+                    for (int i = 0; i < 12; i++)
+                    {
+                        Dust.NewDustPerfect(Projectile.Center + ((Distance * Projectile.scale) * (r - 0.785398f).ToRotationVector2()), DustID.Smoke, Main.rand.NextVector2Circular(1, 1), 44);
+                    }
                 }
-                shoottimer = 0;
+                if (++effecttimer >= 4)
+                {
+                    if (++effecttimer >= 6)
+                    {
+                        Distance = 20;
+                        if (timeshot >= 3)
+                        {
+                            Projectile.rotation += 0.4f;
+                            if (++effecttimer >= 90 / water)
+                            {
+                                Projectile.rotation = Rotation;
+                                Main.LocalPlayer.GetModPlayer<TmScreenshake>().ShakeScreen(0.2f, 0.6f);
+                                timeshot = 0;
+                                effecttimer = 0;
+                                shoottimer = 9 - water;
+                                Projectile.Kill();
+                            }
+                            else if (effecttimer == 8)
+                            {
+                             
+                                SoundEngine.PlaySound(SoundID.DD2_BallistaTowerShot, Projectile.Center);
+                            }
+                        }
+                        else
+                        {
+                            effecttimer = 0;
+                            shoottimer = 0;
+                        }
+     
+                    }
+                    else
+                    {
+                        Distance += 4;
+                    }
+
+
+                }
+                else
+                {
+                    Distance -= 2;
+                }
             }
-    
+            else
+            {
+                Projectile.rotation = Rotation;
+            }
+
+          
 
 
-          //  Projectile.position = player.MountedCenter + new Vector2(Distance, 0f).RotatedBy(Projectile.ai[1]);
-        //    Projectile.position.X -= Projectile.width / 2f;
-        //    Projectile.position.Y -= Projectile.height / 2f;
-            Projectile.rotation = Rotation;
+            //  Projectile.position = player.MountedCenter + new Vector2(Distance, 0f).RotatedBy(Projectile.ai[1]);
+            //    Projectile.position.X -= Projectile.width / 2f;
+            //    Projectile.position.Y -= Projectile.height / 2f;
+      
+        }
+        private void Shoot(Player player, Vector2 mouse)
+        {
+              for (int i = 0; i < 5; i++)
+            {
+                var newvelocity = new Vector2(0, Main.rand.Next(35, 61)).RotatedBy(mouse.ToRotation() - Math.PI / 2);//.RotatedByRandom(MathHelper.ToRadians(22));
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, newvelocity.RotatedByRandom(MathHelper.ToRadians(16)), ModContent.ProjectileType<ShotgunShell>(), Projectile.damage, 2, player.whoAmI);
+            }
         }
         public override bool PreDraw(ref Color lightColor)
         {

@@ -1,0 +1,410 @@
+Buffs: {
+	WeaponSpeedBuff: {
+		DisplayName: Weapon Speed Buff
+		Description: Mods.tmt.Buffs.WeaponSpeedBuff.Description
+	}
+}
+
+Tiles.PipestoneTile.MapEntry: Pipestone Tile
+
+Items: {
+	AntriquePendent: {
+		DisplayName: Antrique Pendent
+		Tooltip:
+			'''
+			'As dusty it may be, its markings still resemble something.'
+			Falling off tall ledges will result in a heavy slam
+			Gives the user no fall damage
+			'''
+	}
+
+	Obometer: {
+		DisplayName: Obometer
+		Tooltip: Increases Attack speed at the cost of your Life
+	}
+
+	ActiveCoil: {
+		DisplayName: Active Coil
+		Tooltip: Despite what you think it is, it provides little to no Energy
+	}
+
+	DeityBait: {
+		DisplayName: Deity Bait
+		Tooltip: Chance to give lesser bait when consumed
+	}
+
+	Deworminator: {
+		DisplayName: Deworminator
+		Tooltip: Worms nearby seem to disinterate into nothingness.
+	}
+
+	MagicPickaxe: {
+		DisplayName: Magic Pickaxe
+		Tooltip: Right Click to consume mana for faster pickaxe speed
+	}
+
+	AncientFizzer: {
+		DisplayName: Ancient Fizzer
+		Tooltip: Swing to Blow Dangerious Bubbles to harm your Foe
+	}
+
+	Contrary: {
+		DisplayName: Contrary
+		Tooltip: Created by a Forbidden tin, Forever to be cursed
+	}
+
+	DantesInferno: {
+		DisplayName: Dantes Inferno
+		Tooltip:
+			'''
+			Summons the Grips of hell to slap unwanted visitors
+			There were only 9 Triangles of hell
+			'''
+	}
+
+	GelBreaker: {
+		DisplayName: Gel Breaker
+		Tooltip:
+			'''
+			Spawns Jellious Stars On the cursor
+			It has a slight hum
+			'''
+	}
+
+	BareBones: {
+		DisplayName: Bare Bones
+		Tooltip: Swing a sharp ended mace that may saw your pray in two!
+	}
+
+	Desolate: {
+		DisplayName: Desolate
+		Tooltip: Right click to spawn a Yarn of Roots
+	}
+
+	PutridMushrump: {
+		DisplayName: Putrid Mushrump
+		Tooltip: this item might be removed.. i havent got around doing it yet
+	}
+
+	VeinSpine: {
+		DisplayName: Vein Spine
+		Tooltip:
+			'''
+			Swing around a spear that when piecing causes a healing effect
+			The roots of a Division Tree
+			'''
+	}
+
+	Impulsive: {
+		DisplayName: Impulsive
+		Tooltip: Fires two skulls that ram into your enemies at rapid speed
+	}
+
+	ObliqueDownpour: {
+		DisplayName: Oblique Downpour
+		Tooltip:
+			'''
+			When crystals reach the point of the mouse when spawned they may explode into many groups
+			However bring the mouse farther or being a enemy it will not split
+			'''
+	}
+
+	Preeminent: {
+		DisplayName: Preeminent
+		Tooltip:
+			'''
+			Fire in fast motion while dealing devistating blows to closer ranged foe
+			May spawn healing orbs close to the enemy, if you dare getting them
+			'''
+	}
+
+	EnergizedRadioItem: {
+		DisplayName: Energized Radio
+		Tooltip: It buzzes ominously
+	}
+
+	Pipestone: {
+		DisplayName: Pipestone
+		Tooltip: Incredibly durable material designed to last for very long periods of time
+	}
+
+	PipestoneWallItem: {
+		DisplayName: Pipestone Wall Item
+		Tooltip: Incredibly durable material designed to last for very long periods of time
+	}
+
+	HealthOrby: {
+		DisplayName: Health Orby
+		Tooltip: why the hell do you have this
+	}
+
+	Wavelink: {
+		DisplayName: WaveLink
+		Tooltip: Fires Highly Volatile Arrows when loaded with wooden arrows
+	}
+
+	Catrose: {
+		DisplayName: Catrose
+		Tooltip:
+			'''
+			The smell reminds you of a Meteor shower
+			Occasionally summons roses to attack your foe
+			'''
+	}
+
+	BottleOfSparks: {
+		DisplayName: Bottle of Sparks
+		Tooltip: The glass appeared to have not but 1 scratch!
+	}
+
+	GalvanicConductor: {
+		DisplayName: Galvanic Conductor
+		Tooltip: Fires a Pin Point Shuriken to follow enemys after being hit
+	}
+
+	Tertrang: {
+		DisplayName: Tertrang
+		Tooltip:
+			'''
+			When holding right click when thrown freezes the boomerang in place
+			May best be used with along side of another weapon
+			'''
+	}
+
+	WarpedPouch: {
+		DisplayName: Warped Pouch
+		Tooltip:
+			'''
+			 Quickly fires cursed stars to give your enemys a less then great time
+			 The pouch seems to have a unlimited supply of stars
+			'''
+	}
+}
+
+NPCs: {
+	Windlass.DisplayName: Windlass
+	CandleFly.DisplayName: Candle Fly
+	Cascade.DisplayName: Cascade
+}
+
+Projectiles: {
+	wwwa.DisplayName: i seriousy dont remember what this was so you died to a pinch of rain
+	VeinStarP.DisplayName: Vein Star
+	preeminetheld.DisplayName: mf how did you manage to die to this you actually fucking suck
+	BloodSplatter.DisplayName: Blood Splatter
+	explosive.DisplayName: you died to explosion boowomp
+	Rock.DisplayName: Rock
+	SensitiveMine.DisplayName: Sensitive Mine
+	FizzerBubble.DisplayName: Fizzer Bubble
+	GloryHand.DisplayName: Glory Hand
+	HITBOX.DisplayName: idk what to call this so you died to like air that was violent
+	JellyStar.DisplayName: Jelly Star
+	MagicSpark.DisplayName: Magic Spark
+	BareBonesFlail.DisplayName: Bare Bones Flail
+	Hitbox.DisplayName: you died to a fucking hitbox projecitle good fucking job woohoo
+	Metalspark.DisplayName: Metalspark
+	PlantCore.DisplayName: Plant Core
+	PlantRoots.DisplayName: Plant Roots
+	PutridMushrumpP.DisplayName: Putrid Mushrump
+	CrystakArrow.DisplayName: Crystak Arrow
+	FleshPike.DisplayName: Flesh Pike
+	ShotgunShell.DisplayName: Shotgun Shell
+	StrangeCrystak.DisplayName: Strange Crystak
+	TinyBubble.DisplayName: Tiny Bubble
+	MimicArrow.DisplayName: Mimic Arrow
+	ACatRose.DisplayName: A Cat Rose
+	AFriendlyCatRose.DisplayName: A Friendly Cat Rose
+	RosePebble.DisplayName: Rose Pebble
+	ExplosionEffect.DisplayName: Explosion Effect
+	SparkArrow.DisplayName: Spark Arrow
+	Tertrang.DisplayName: Tertrang
+	RoomyStars.DisplayName: Roomy Stars
+}
+
+"": {
+	Tiles.PipestoneTile.MapEntry: Pipestone Tile
+
+	Buffs: {
+		WeaponSpeedBuff: {
+			DisplayName: Weapon Speed Buff
+			Description: Mods.tmt.Buffs.WeaponSpeedBuff.Description
+		}
+	}
+
+	Items: {
+		AntriquePendent: {
+			DisplayName: Antrique Pendent
+			Tooltip: ""
+		}
+
+		Catrose: {
+			DisplayName: Catrose
+			Tooltip: ""
+		}
+
+		Obometer: {
+			DisplayName: Obometer
+			Tooltip: ""
+		}
+
+		ActiveCoil: {
+			DisplayName: Active Coil
+			Tooltip: ""
+		}
+
+		BottleOfSparks: {
+			DisplayName: Bottle Of Sparks
+			Tooltip: ""
+		}
+
+		DeityBait: {
+			DisplayName: Deity Bait
+			Tooltip: ""
+		}
+
+		Deworminator: {
+			DisplayName: Deworminator
+			Tooltip: ""
+		}
+
+		MagicPickaxe: {
+			DisplayName: Magic Pickaxe
+			Tooltip: ""
+		}
+
+		AncientFizzer: {
+			DisplayName: Ancient Fizzer
+			Tooltip: ""
+		}
+
+		Contrary: {
+			DisplayName: Contrary
+			Tooltip: ""
+		}
+
+		DantesInferno: {
+			DisplayName: Dantes Inferno
+			Tooltip: ""
+		}
+
+		GelBreaker: {
+			DisplayName: Gel Breaker
+			Tooltip: ""
+		}
+
+		BareBones: {
+			DisplayName: Bare Bones
+			Tooltip: ""
+		}
+
+		Desolate: {
+			DisplayName: Desolate
+			Tooltip: ""
+		}
+
+		PutridMushrump: {
+			DisplayName: Putrid Mushrump
+			Tooltip: ""
+		}
+
+		Tertrang: {
+			DisplayName: Tertrang
+			Tooltip: ""
+		}
+
+		VeinSpine: {
+			DisplayName: Vein Spine
+			Tooltip: ""
+		}
+
+		GalvanicConductor: {
+			DisplayName: Galvanic Conductor
+			Tooltip: ""
+		}
+
+		Impulsive: {
+			DisplayName: Impulsive
+			Tooltip: ""
+		}
+
+		ObliqueDownpour: {
+			DisplayName: Oblique Downpour
+			Tooltip: ""
+		}
+
+		Preeminent: {
+			DisplayName: Preeminent
+			Tooltip: ""
+		}
+
+		WarpedPouch: {
+			DisplayName: Warped Pouch
+			Tooltip: ""
+		}
+
+		Wavelink: {
+			DisplayName: Wavelink
+			Tooltip: ""
+		}
+
+		HealthOrby: {
+			DisplayName: Health Orby
+			Tooltip: ""
+		}
+
+		EnergizedRadioItem: {
+			DisplayName: Energized Radio Item
+			Tooltip: ""
+		}
+
+		Pipestone: {
+			DisplayName: Pipestone
+			Tooltip: ""
+		}
+
+		PipestoneWallItem: {
+			DisplayName: Pipestone Wall Item
+			Tooltip: ""
+		}
+	}
+
+	NPCs: {
+		Windlass.DisplayName: Windlass
+		CandleFly.DisplayName: Candle Fly
+		Cascade.DisplayName: Cascade
+	}
+
+	Projectiles: {
+		wwwa.DisplayName: wwwa
+		VeinStarP.DisplayName: Vein Star P
+		preeminetheld.DisplayName: preeminetheld
+		ACatRose.DisplayName: A Cat Rose
+		AFriendlyCatRose.DisplayName: A Friendly Cat Rose
+		BloodSplatter.DisplayName: Blood Splatter
+		explosive.DisplayName: explosive
+		Rock.DisplayName: Rock
+		SensitiveMine.DisplayName: Sensitive Mine
+		ExplosionEffect.DisplayName: Explosion Effect
+		FizzerBubble.DisplayName: Fizzer Bubble
+		GloryHand.DisplayName: Glory Hand
+		HITBOX.DisplayName: H I T B O X
+		JellyStar.DisplayName: Jelly Star
+		MagicSpark.DisplayName: Magic Spark
+		BareBonesFlail.DisplayName: Bare Bones Flail
+		Hitbox.DisplayName: Hitbox
+		Metalspark.DisplayName: Metalspark
+		PlantCore.DisplayName: Plant Core
+		PlantRoots.DisplayName: Plant Roots
+		PutridMushrumpP.DisplayName: Putrid Mushrump P
+		Tertrang.DisplayName: Tertrang
+		CrystakArrow.DisplayName: Crystak Arrow
+		FleshPike.DisplayName: Flesh Pike
+		MimicArrow.DisplayName: Mimic Arrow
+		RoomyStars.DisplayName: Roomy Stars
+		ShotgunShell.DisplayName: Shotgun Shell
+		SparkArrow.DisplayName: Spark Arrow
+		StrangeCrystak.DisplayName: Strange Crystak
+		RosePebble.DisplayName: Rose Pebble
+		TinyBubble.DisplayName: Tiny Bubble
+	}
+}

@@ -7,7 +7,7 @@ using Terraria.ID;
 using Terraria.DataStructures;
 using Terraria.ModLoader.Utilities;
 
-namespace tm.Npcs.Underground
+namespace tmt.Npcs.Underground
 {
     public class Cascade : ModNPC
     {
@@ -24,15 +24,15 @@ namespace tm.Npcs.Underground
         }
         public override void SetDefaults()
         {
-            NPC.width = 28;
-            NPC.height = 28;
+            NPC.width = 38;
+            NPC.height = 38;
             NPC.lifeMax = 5;
             NPC.HitSound = SoundID.NPCHit36;
             NPC.DeathSound = SoundID.NPCDeath39;
             NPC.value = 20;
             NPC.aiStyle = -1;
             NPC.noGravity = true;
-            NPC.frame.Y = Main.rand.Next(1, 6) * 28;
+            NPC.frame.Y = Main.rand.Next(1, 6) * 38;
         }
         public override void OnKill()
         {
@@ -148,7 +148,7 @@ namespace tm.Npcs.Underground
         }
         public void ChangeFace()
         {
-            NPC.frame.Y = Main.rand.Next(1, 6) * 28;
+            NPC.frame.Y = Main.rand.Next(1, 6) * 38;
         }
         }
 }

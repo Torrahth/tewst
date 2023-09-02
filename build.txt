@@ -4,3 +4,4 @@ version = 0.1
 homepage = https://forums.terraria.org/index.php?threads/tewst-mod.112785/
 modReferences = StructureHelper
 
+hideCode = true

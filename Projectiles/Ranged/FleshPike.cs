@@ -9,7 +9,7 @@ using ReLogic.Content;
 using System;
 using Terraria.GameContent;
 
-namespace tm.Projectiles.Ranged
+namespace tmt.Projectiles.Ranged
 {
     public class FleshPike : ModProjectile
     {
@@ -47,14 +47,18 @@ namespace tm.Projectiles.Ranged
     Projectile.ai[1] = 1f;
             return false;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Projectile.ai[1] = 1f;
         }
-        public override void OnHitPvp(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            Projectile.ai[1] = 1f;
+            if (info.PvP == true)
+            {
+                Projectile.ai[1] = 1f;
+            }
         }
+  
 
         public override void AI()
         {

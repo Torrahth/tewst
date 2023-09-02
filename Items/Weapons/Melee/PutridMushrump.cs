@@ -4,9 +4,9 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
-using tm.Projectiles.Melee;
+using tmt.Projectiles.Melee;
 
-namespace tm.Items.Weapons.Melee
+namespace tmt.Items.Weapons.Melee
 {
     public class PutridMushrump : ModItem
     {

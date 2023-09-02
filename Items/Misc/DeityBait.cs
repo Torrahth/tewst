@@ -2,13 +2,13 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace tm.Items.Misc
+namespace tmt.Items.Misc
 {
     public class DeityBait : ModItem
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Chance to give lesser bait when consumed");
+            // Tooltip.SetDefault("Chance to give lesser bait when consumed");
         }
         public override void SetDefaults()
         {

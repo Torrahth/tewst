@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using System.Collections.Generic;
 
-namespace tm.Projectiles.Melee
+namespace tmt.Projectiles.Melee
 {
     public class PlantRoots : ModProjectile
     {

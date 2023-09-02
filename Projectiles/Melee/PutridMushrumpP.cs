@@ -8,11 +8,11 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace tm.Projectiles.Melee
+namespace tmt.Projectiles.Melee
 {
     public class PutridMushrumpP : ModProjectile
     {
-        public override string Texture => "tm/Items/Weapons/Melee/PutridMushrump";
+        public override string Texture => "tmt/Items/Weapons/Melee/PutridMushrump";
         
         private float distanceFromPlayer = 25;
 

@@ -5,9 +5,9 @@ using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.Audio;
-using tm.Projectiles.Mage;
+using tmt.Projectiles.Mage;
 
-namespace tm.Items.Weapons.Mage
+namespace tmt.Items.Weapons.Mage
 {
     public class GelBreaker : ModItem
     {
@@ -28,7 +28,7 @@ namespace tm.Items.Weapons.Mage
             Item.noMelee = true;
             Item.useStyle = 1;
             Item.value = Item.sellPrice(0, 0, 20);
-            Item.UseSound = new SoundStyle("tm/Common/Sounds/Rattle") with
+            Item.UseSound = new SoundStyle("tmt/Common/Sounds/Rattle") with
             {
                 Volume = 0.4f,
                 PitchVariance = 0.3f,
@@ -57,7 +57,6 @@ namespace tm.Items.Weapons.Mage
             CreateRecipe()
             .AddIngredient(ItemID.Gel, 10)
               .AddIngredient(ItemID.FallenStar)
-            .AddIngredient(ItemID.DemoniteBar, 6)
                 .AddIngredient(ItemID.ShadowScale, 12)
 
             .AddTile(TileID.Anvils)
@@ -65,7 +64,6 @@ namespace tm.Items.Weapons.Mage
             CreateRecipe()
               .AddIngredient(ItemID.Gel, 10)
                 .AddIngredient(ItemID.FallenStar)
-              .AddIngredient(ItemID.CrimtaneBar, 6)
                   .AddIngredient(ItemID.TissueSample, 12)
               .AddTile(TileID.Anvils)
               .Register();

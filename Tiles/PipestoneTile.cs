@@ -2,27 +2,26 @@
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace tm.Tiles
+namespace tmt.Tiles
 {
     public class PipestoneTile : ModTile
     {
         public override void SetStaticDefaults()
         {
-            TileID.Sets.Ore[Type] = true;
-            Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
+            TileID.Sets.Ore[Type] = false;
+            Main.tileSpelunker[Type] = false; 
             Main.tileShine2[Type] = true; // Modifies the draw color slightly.
             Main.tileMergeDirt[Type] = true;
             Main.tileSolid[Type] = true;
             Main.tileBlockLight[Type] = true;
 
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Pipestone");
+            LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Pipestone");
             AddMapEntry(new Color(152, 171, 198), name);
-
             // dustType = 84;
-              ItemDrop = ModContent.ItemType<Pipestone>();
             //   soundType = SoundID.Tink;
             //soundStyle = 1;
             //mineResist = 4f;
@@ -34,7 +33,7 @@ namespace tm.Tiles
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Incredibly durable material designed to last for very long periods of time");
+            // Tooltip.SetDefault("Incredibly durable material designed to last for very long periods of time");
         }
         public override void SetDefaults()
         {
@@ -48,6 +47,18 @@ namespace tm.Tiles
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.createTile = ModContent.TileType<PipestoneTile>();
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe(4)
+            .AddIngredient(ItemID.MudBlock)
+             .AddIngredient(ItemID.ClayBlock)
+  .AddCondition(Condition.NearHoney)
+            .Register();
+            CreateRecipe()
+                  .AddIngredient(ModContent.ItemType<PipestoneWallItem>(), 4)
+                        .AddTile(TileID.WorkBenches)
+            .Register();
         }
     }
     public class PipestoneWall : ModWall
@@ -76,6 +87,13 @@ namespace tm.Tiles
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.createWall = ModContent.WallType<PipestoneWall>();
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe(4)
+                 .AddIngredient(ModContent.ItemType<Pipestone>())
+                 .AddTile(TileID.WorkBenches)
+           .Register();
         }
     }
 }

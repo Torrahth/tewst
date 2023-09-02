@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 
-namespace tm.Items.Weapons.Mage
+namespace tmt.Items.Weapons.Mage
 {
     public class AncientFizzer : ModItem
     {

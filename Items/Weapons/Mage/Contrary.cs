@@ -4,15 +4,15 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
-using tm.Projectiles.Mage;
+using tmt.Projectiles.Mage;
 
-namespace tm.Items.Weapons.Mage
+namespace tmt.Items.Weapons.Mage
 {
     public class Contrary : ModItem
     {
         public override void SetStaticDefaults()
         {
-             Tooltip.SetDefault("Forbidden tin, Forever cursed");
+             // Tooltip.SetDefault("Forbidden tin, Forever cursed");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()

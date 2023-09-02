@@ -8,9 +8,9 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using ReLogic.Content;
 using System.Collections.Generic;
-using tm.Common;
+using tmt.Common;
 
-namespace tm.Projectiles.Melee
+namespace tmt.Projectiles.Melee
 {
     public class BareBonesFlail : ModProjectile 
     {
@@ -23,7 +23,7 @@ namespace tm.Projectiles.Melee
         }
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bare-Bones");
+            // DisplayName.SetDefault("Bare-Bones");
         }
         public override void SetDefaults()
         {
@@ -38,10 +38,8 @@ namespace tm.Projectiles.Melee
             Projectile.localNPCHitCooldown = 15; 
             Projectile.aiStyle = ProjAIStyleID.Flail; // oh holy moly this exists?
            AIType = ProjectileID.TheMeatball; // FUCK YOUUU!!!
-         //   DrawOffsetX = -6;
-          //  DrawOriginOffsetY = -6;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (target.boss == false)
             {

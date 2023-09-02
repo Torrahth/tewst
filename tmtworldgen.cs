@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.WorldBuilding;
-using tm.Items.Equips;
+using tmt.Items.Equips;
 using Terraria.ID;
 using Terraria.IO;
 using System;
@@ -16,17 +16,33 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Generation;
 using Terraria.Localization;
 using Terraria.Utilities;
-using tm.Tiles;
+using tmt.Tiles;
 using Terraria.ObjectData;
 using StructureHelper;
 
-namespace tm
+namespace tmt
 {
 
     public class tmworldgen : ModSystem
     {
-      
 
+        public class waterworld : GlobalTile
+        {
+
+            public override void RandomUpdate(int i, int j, int type)
+            {
+                if (WorldGen.genRand.NextBool(53))
+                {
+                    int y = WorldGen.genRand.Next((int)GenVars.worldSurface, Main.maxTilesY);
+                    Tile tile = Main.tile[i - 1, y - 1];
+                    if (tile.TileType == TileID.JungleGrass && type != ModContent.TileType<Tiles.Catrose>())
+                    {
+                        WorldGen.PlaceTile(i, y, ModContent.TileType<Tiles.Catrose >(), mute: true);
+                    }
+                }
+
+            }
+        }
         public class TmWorld : ModSystem
         {
 
@@ -68,7 +84,7 @@ namespace tm
         }
 
         // general generation generals
-        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
+        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
 
             // Because world generation is like layering several images ontop of each other, we need to do some steps between the original world generation steps.
@@ -107,7 +123,7 @@ namespace tm
                 for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 6E-04); k++)
                 {
                     int x = WorldGen.genRand.Next(12, Main.maxTilesX - 12);
-                    int y = WorldGen.genRand.Next((int)WorldGen.rockLayer, Main.maxTilesY);
+                    int y = WorldGen.genRand.Next((int)GenVars.rockLayer, Main.maxTilesY);
      
                     // generatestructure(x, y);  im so fucking tired of this shit i spent so fucking long trying to do this and i fucking suck im using sturcutre helper fuck you
                     Tile tile = Main.tile[x, y - 1];
@@ -250,7 +266,7 @@ namespace tm
                     for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 6E-06); k++)
                     {
                     int x = WorldGen.genRand.Next(132, Main.maxTilesX - 132);
-                    int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, (Main.maxTilesY - 200));
+                    int y = WorldGen.genRand.Next((int)GenVars.rockLayer, (Main.maxTilesY - 200));
                     type = Main.rand.Next(1, 8);
                     rx = Main.rand.Next(3, 12);
                     ry = Main.rand.Next(3, 12);
@@ -303,8 +319,8 @@ namespace tm
 
 
                                     var dims = new Point16(x, y);
-                                    Generator.GetDimensions("Common/CandleStructure", ModContent.GetInstance<tm>(), ref d, false);
-                                    Generator.GenerateStructure("Common/CandleStructure", dims, ModContent.GetInstance<tm>(), false, false);
+                                    Generator.GetDimensions("Common/CandleStructure", ModContent.GetInstance<tmt>(), ref d, false);
+                                    Generator.GenerateStructure("Common/CandleStructure", dims, ModContent.GetInstance<tmt>(), false, false);
                                 }
                                 else
                                 {
@@ -312,8 +328,8 @@ namespace tm
                                     var dims2 = new Point16(x, y);
                                     Random rnd = new Random();
                                     int index = rnd.Next(list.Count);
-                                    Generator.GetDimensions(list[index], ModContent.GetInstance<tm>(), ref d, false);
-                                    Generator.GenerateStructure(list[index], dims2, ModContent.GetInstance<tm>(), false, false);
+                                    Generator.GetDimensions(list[index], ModContent.GetInstance<tmt>(), ref d, false);
+                                    Generator.GenerateStructure(list[index], dims2, ModContent.GetInstance<tmt>(), false, false);
                                 }
                             }
                 
@@ -328,8 +344,8 @@ namespace tm
 
 
                                     var dims = new Point16(x, y);
-                                    Generator.GetDimensions("Common/CandleStructure", ModContent.GetInstance<tm>(), ref d, false);
-                                    Generator.GenerateStructure("Common/CandleStructure", dims, ModContent.GetInstance<tm>(), false, false);
+                                    Generator.GetDimensions("Common/CandleStructure", ModContent.GetInstance<tmt>(), ref d, false);
+                                    Generator.GenerateStructure("Common/CandleStructure", dims, ModContent.GetInstance<tmt>(), false, false);
                                 }
                                 else
                                 {
@@ -337,8 +353,8 @@ namespace tm
                                     var dims2 = new Point16(x, y);
                                     Random rnd = new Random();
                                     int index = rnd.Next(list.Count);
-                                    Generator.GetDimensions(list[index], ModContent.GetInstance<tm>(), ref d, false);
-                                    Generator.GenerateStructure(list[index], dims2, ModContent.GetInstance<tm>(), false, false);
+                                    Generator.GetDimensions(list[index], ModContent.GetInstance<tmt>(), ref d, false);
+                                    Generator.GenerateStructure(list[index], dims2, ModContent.GetInstance<tmt>(), false, false);
                                 }
                             }
                         }

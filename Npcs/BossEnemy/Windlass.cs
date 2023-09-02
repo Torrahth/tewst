@@ -7,11 +7,11 @@ using Terraria.ID;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.WorldBuilding;
 using Terraria.ModLoader.Utilities;
-using tm.Projectiles.Enemy;
+using tmt.Projectiles.Enemy;
 using Terraria.GameContent.ItemDropRules;
-using tm.Items.Misc;
+using tmt.Items.Misc;
 
-namespace tm.Npcs.BossEnemy
+namespace tmt.Npcs.BossEnemy
 {
     public class Windlass : ModNPC
     {
@@ -26,7 +26,7 @@ namespace tm.Npcs.BossEnemy
         public override void SetDefaults()
         {
             NPC.width = 76;
-            NPC.height = 60;
+            NPC.height = 76;
             //  NPC.scale = Main.rand.NextFloat(0.7f, 1.9f);
             NPC.lifeMax = 625;
             NPC.damage = 12;
@@ -104,7 +104,7 @@ namespace tm.Npcs.BossEnemy
                 if (player.velocity.Y == 0)
                 {
                     player.velocity.Y -= 6;
-                    player.Hurt(Terraria.DataStructures.PlayerDeathReason.ByNPC(NPC.whoAmI), NPC.damage, 0, false, false, false, -1);
+                    player.Hurt(Terraria.DataStructures.PlayerDeathReason.ByNPC(NPC.whoAmI), NPC.damage, 0, false, false, -1);
                 }
             }
             // y /= 1.02f;

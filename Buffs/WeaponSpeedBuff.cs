@@ -2,7 +2,7 @@
 using Terraria.ModLoader;
 
 
-namespace tm.Buffs
+namespace tmt.Buffs
 {
     public class WeaponSpeedBuff : ModBuff
     {

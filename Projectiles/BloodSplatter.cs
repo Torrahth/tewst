@@ -4,13 +4,13 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.Audio;
-using tm.Common;
+using tmt.Common;
 
-namespace tm.Projectiles
+namespace tmt.Projectiles
 {
     public class BloodSplatter : ModProjectile
     {
-        public override string Texture => "tm/Common/Textures/Empty"; 
+        public override string Texture => "tmt/Common/Textures/Empty"; 
         public override void SetDefaults()
         {
             Projectile.width = 5;
@@ -26,7 +26,7 @@ namespace tm.Projectiles
         public override void OnSpawn(IEntitySource source)
         {
             Main.LocalPlayer.GetModPlayer<TmScreenshake>().ShakeScreen(0.3f, 0.1f);
-            SoundEngine.PlaySound(new SoundStyle("tm/Common/Sounds/SpearSlice") with
+            SoundEngine.PlaySound(new SoundStyle("tmt/Common/Sounds/SpearSlice") with
             {
                 Volume = 0.9f,
                 PitchVariance = 0.2f,

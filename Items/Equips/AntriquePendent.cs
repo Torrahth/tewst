@@ -4,10 +4,10 @@ using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework;
 using System.Linq.Expressions;
-using tm.Common;
+using tmt.Common;
 using System;
 
-namespace tm.Items.Equips
+namespace tmt.Items.Equips
 {
     public class AntriquePendent : ModItem
     {
@@ -15,13 +15,13 @@ namespace tm.Items.Equips
         int falldamage = 0;
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("'As dusty it may be, its markings still resemble something.'\nFalling off tall ledges will result in a heavy slam\nGives the user no fall damage");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
         {
             Item.width = 40;
             Item.height = 32;
+            Item.maxStack = 1;
             Item.rare = ItemRarityID.Green;
             Item.value = Item.sellPrice(0, 0, 33, 0);
             Item.accessory = true;
@@ -56,7 +56,7 @@ namespace tm.Items.Equips
     }
     public class wwwa : ModProjectile
     {
-        public override string Texture => "tm/Common/Textures/Empty";
+        public override string Texture => "tmt/Common/Textures/Empty";
         public override void SetDefaults()
         {
             Projectile.width = 370;

@@ -1,16 +1,4 @@
-Tewst mod is a gameplay focused mod introducing fun weapons and fresh enemys!
-
-Tewst mod includes:
-
-* 8 Items
-
-* 1 Enemy
-
-* 1 Miniboss
-
-* A Magic Subclass
-
-* A varying amount of bugs...
+Tewst mod is a gameplay focused mod introducing fun weapons and items to inprove your journey while slowly introducing a story that has yet to be created but its being developed!
 
 Credits:
 
@@ -18,6 +6,6 @@ torrah th (who cares hes the main dev)
 
 Daluyan Messes (spriter)
 
+Chill (Spriter)
 
-
-and you for actually checking out the mod and not skipping over it like its complete and utter junk 
+and thank you for actually checking out the mod and not skipping over it

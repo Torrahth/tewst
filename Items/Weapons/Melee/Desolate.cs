@@ -1,16 +1,16 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
-using tm.Projectiles.Melee;
+using tmt.Projectiles.Melee;
 using Terraria.GameContent.Creative;
 
-namespace tm.Items.Weapons.Melee
+namespace tmt.Items.Weapons.Melee
 {
     public class Desolate : ModItem
     {
         public override void SetStaticDefaults()
         {
-             Tooltip.SetDefault("Right click to spawn a Yarn of Roots");
+             // Tooltip.SetDefault("Right click to spawn a Yarn of Roots");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
@@ -57,16 +57,9 @@ namespace tm.Items.Weapons.Melee
             CreateRecipe()
                 .AddIngredient(ItemID.WoodenSword)
                 .AddIngredient(ItemID.Acorn, 8)
-                     .AddIngredient(ItemID.DemoniteBar, 6)
+                .AddRecipeGroup(nameof(ItemID.DemoniteBar), 6)
                 .AddTile(TileID.WorkBenches)
                 .Register();
-            CreateRecipe()
-              .AddIngredient(ItemID.WoodenSword)
-              .AddIngredient(ItemID.Acorn, 8)
-                   .AddIngredient(ItemID.CrimtaneBar, 6)
-              .AddTile(TileID.WorkBenches)
-              .Register();
-
         }
 
     }

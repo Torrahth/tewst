@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.WorldBuilding;
-using tm.Items.Equips;
+using tmt.Items.Equips;
 using Terraria.ID;
 using Terraria.IO;
 using System;
@@ -17,11 +17,11 @@ using Terraria.GameContent.Generation;
 using Terraria.Localization;
 using Terraria.Utilities;
 using Terraria.GameContent.ItemDropRules;
-using tm.Items.Misc;
+using tmt.Items.Misc;
 
-namespace tm
+namespace tmt
 {
-    public class tmglobalitem : GlobalItem
+    public class tmtglobalitem : GlobalItem
     {
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
         {

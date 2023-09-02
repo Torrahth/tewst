@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
-using tm.Projectiles.Melee;
+using tmt.Projectiles.Melee;
 using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework;
 using System;
@@ -11,20 +11,20 @@ using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 
-namespace tm.Items.Weapons.Melee
+namespace tmt.Items.Weapons.Melee
 { 
     public class VeinSpine : ModItem
     {
         int combo = 1;
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Swing around a spear that when piecing causes a healing effect\nThe roots of a Great Rotting Tree");
+            // Tooltip.SetDefault("Swing around a spear that when piecing causes a healing effect\nThe roots of a Great Rotting Tree");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
         {
             Item.width = 86;
-            Item.height = 94;
+            Item.height = 92;
             Item.useTime = 21;
             Item.knockBack = 1;
             Item.useAnimation = 21;
@@ -179,7 +179,7 @@ namespace tm.Items.Weapons.Melee
             player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, Projectile.rotation - 2.35619f);
   
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player player = Main.player[Projectile.owner];
             SoundEngine.PlaySound(SoundID.DD2_FlameburstTowerShot, Projectile.Center);

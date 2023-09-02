@@ -1,9 +1,9 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using tm.Projectiles.Melee;
+using tmt.Projectiles.Melee;
 
-namespace tm.Items.Weapons.Melee
+namespace tmt.Items.Weapons.Melee
 {
     public class BareBones : ModItem
     {

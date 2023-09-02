@@ -1,10 +1,10 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
-using tm.Projectiles.Melee;
+using tmt.Projectiles.Melee;
 using Terraria.GameContent.Creative;
 
-namespace tm.Items.Tools
+namespace tmt.Items.Tools
 {
     public class MagicPickaxe : ModItem
     {
@@ -12,7 +12,7 @@ namespace tm.Items.Tools
         int timer = 0;
         public override void SetStaticDefaults()
         {
-             Tooltip.SetDefault("Right Click to consume mana for faster pickaxe speed");
+             // Tooltip.SetDefault("Right Click to consume mana for faster pickaxe speed");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
@@ -60,8 +60,9 @@ namespace tm.Items.Tools
                 if (Main.rand.NextBool(6))
                 {
                     var r = Dust.NewDustPerfect(player.Center, DustID.Torch, Main.rand.NextVector2CircularEdge(2, 4) * 2, 12, Scale: 0.6f);
-                    player.statMana -= 5; // if your unlucky your mana will drain super fast, shit game design but idc
+              
                 }
+                player.statMana -= 1;
                 timer -= 1;
                 yea = 6;
 
